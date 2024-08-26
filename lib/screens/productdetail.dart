@@ -21,12 +21,14 @@ class ProductDetailScreen extends StatefulWidget {
   final String productName;
   final String productAmount;
   final String productStatus;
+  final int productQuantity;
   const ProductDetailScreen({
     Key? key,
     required this.productID,
     required this.productName,
     required this.productAmount,
     required this.productStatus,
+    required this.productQuantity,
   }) : super(key: key);
 
   @override
@@ -433,8 +435,22 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                     ),
                     smolgapH,
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
+                        Row(
+                          children: [
+                            Text(
+                              '${widget.productQuantity} Left in Stock',
+                              style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                                color: widget.productQuantity >= 10
+                                    ? Color.fromRGBO(46, 146, 83, 1)
+                                    : Colors.red,
+                              ),
+                            ),
+                          ],
+                        ),
                         Container(
                           margin: EdgeInsets.symmetric(horizontal: 2.0),
                           padding: EdgeInsets.symmetric(
