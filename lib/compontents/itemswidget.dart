@@ -59,6 +59,7 @@ class _ItemsWidgetState extends State<ItemsWidget> {
                     productName: product['product_name'],
                     productAmount: product['product_amount'],
                     productStatus: product['product_status'],
+                    productQuantity: int.parse(product['product_quantity']),
                   ),
                   // Pass product data to ProductDetailScreen
                   settings: RouteSettings(arguments: product),
@@ -91,6 +92,8 @@ class _ItemsWidgetState extends State<ItemsWidget> {
                             productName: product['product_name'],
                             productAmount: product['product_amount'],
                             productStatus: product['product_status'],
+                            productQuantity:
+                                int.parse(product['product_quantity']),
                           ),
                           // Pass product data to ProductDetailScreen
                           settings: RouteSettings(arguments: product),
@@ -147,6 +150,8 @@ class _ItemsWidgetState extends State<ItemsWidget> {
                                   productName: product['product_name'],
                                   productAmount: product['product_amount'],
                                   productStatus: product['product_status'],
+                                  productQuantity:
+                                      int.parse(product['product_quantity']),
                                 ),
                                 settings: RouteSettings(arguments: product),
                               ),
